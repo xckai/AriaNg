@@ -43,7 +43,7 @@
                             <div class="col-sm-12">
                                 <p ng-bind="'format.task.new.download-links' | translate: {count: getValidUrlsCount()}">Download Links:</p>
                                 <div class="form-group has-feedback no-margin" ng-class="{ 'has-error' : newTaskForm.urls.$invalid && newTaskForm.urls.$dirty, 'has-success' : newTaskForm.urls.$valid && newTaskForm.urls.$dirty }">
-                                    <textarea name="urls" class="form-control" rows="10" autofocus="autofocus" ng-auto-focus ng-valid-urls
+                                    <textarea name="urls" class="form-control" rows="10" autofocus="autofocus" ng-auto-focus ng-pattern="/(^(http|https|ftp|sftp|magnet|btih|sha1):|(^[0-9|a-z|A-Z]{32}$)|(^[0-9|a-z|A-Z]{32}\n.*$)|(^[0-9|a-z|A-Z]{40}$)|(^[0-9|a-z|A-Z]{40}\n.*$))/"
                                               ng-model="context.urls" ng-required="true" ng-keydown="urlTextboxKeyDown($event)"
                                               ng-placeholder="'Support multiple URLs, one URL per line.' | translate"></textarea>
                                     <div class="form-control-icon" ng-if="newTaskForm.urls.$dirty">

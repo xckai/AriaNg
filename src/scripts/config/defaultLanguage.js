@@ -143,7 +143,7 @@
             'Open Metalink File': 'Open Metalink File',
             'Download Now': 'Download Now',
             'Download Later': 'Download Later',
-            'Support multiple URLs, one URL per line.': 'Support multiple URLs, one URL per line.',
+            'Support multiple URLs, one URL per line.': 'Support multiple URLs or info hash keys, one URL per line. \nInfo hash key examples:\n AAAAAAAABBBBBBBBCCCCCCCCDDDDDDDD  (default btih hash function)\n sha1:AAAAAAAABBBBBBBBCCCCCCCCDDDDDDDD (specific sha1 hash function)',
             'Your browser does not support loading file!': 'Your browser does not support loading file!',
             'The selected file type is invalid!': 'The selected file type is invalid!',
             'Failed to load file!': 'Failed to load file!',

@@ -68,6 +68,17 @@
 
                 return filePath.substring(filePath.lastIndexOf('.'));
             },
+            magnetUrlGen: function(key) {
+                // specific btih or sha1 hash function
+                if (key.match(/^(btih|sha1):/)) {
+                    const args = key.split(':');
+                    args[1] = String(args[1] || '').toUpperCase();
+                    return 'magnet:?xt=urn:'+args.join(':');
+                } else {
+                    // use btih hash function as default
+                    return 'magnet:?xt=urn:btih:'+String(key).toUpperCase();
+                }
+            },
             parseUrlsFromOriginInput: function (s) {
                 if (!s) {
                     return [];
@@ -83,6 +94,10 @@
                         result.push(line);
                     } else if (line.match(/^magnet:\?.+$/)) {
                         result.push(line);
+                    } else if (line.match(/^(btih|sha1):[0-9|a-z|A-Z]*$/)) {
+                        result.push(this.magnetUrlGen(line));
+                    } else if (line.match(/(^[0-9|a-z|A-Z]{32}$)|(^[0-9|a-z|A-Z]{40}$)/)) {
+                        result.push(this.magnetUrlGen(line));
                     }
                 }
 
