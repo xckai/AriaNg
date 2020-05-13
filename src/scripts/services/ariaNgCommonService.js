@@ -68,10 +68,10 @@
 
                 return filePath.substring(filePath.lastIndexOf('.'));
             },
-            magnetUrlGen: function(key) {
+            magnetUrlGen: function (key) {
                 // specific btih or sha1 hash function
                 if (key.match(/^(btih|sha1):/)) {
-                    const args = key.split(':');
+                    var args = key.split(':');
                     args[1] = String(args[1] || '').toUpperCase();
                     return 'magnet:?xt=urn:'+args.join(':');
                 } else {
